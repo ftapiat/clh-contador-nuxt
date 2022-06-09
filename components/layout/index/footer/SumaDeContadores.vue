@@ -1,5 +1,5 @@
 <template>
-  <span>Total de contadores: ({{ numElementos }})</span>
+  <span>Total de contadores: ({{ numTotalElementos }})</span>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   name: "SumaDeContadores",
   computed: {
     ...mapGetters('contador', [
-      'numElementos',
+      'numTotalElementos',
     ]),
   },
 }

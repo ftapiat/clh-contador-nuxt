@@ -1,15 +1,23 @@
 <template>
   <div>
     <h1>Listador de Contadores</h1>
-    <Contador v-for="(contador, index) in contadores"
-              :key="index"
-              :contador="contador"
-              :puede-restar="puedeRestarContador(index)"
-              :puede-sumar="puedeSumarContador(index)"
-              :al-restar="() => alRestarPorIndice(index)"
-              :al-sumar="() => alSumarPorIndice(index)"
-              :al-eliminar="() => alEliminarPorIndice(index)"
-    />
+    <table v-if="elementosFiltrados.length > 0">
+      <thead>
+      <tr>
+        <th>Nombre
+          <FiltroNombre/>
+        </th>
+        <th>
+          Valor
+          <FiltroValor/>
+        </th>
+        <th>Eliminar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <Contador v-for="contador in elementosFiltrados" :key="contador.id" :contador="contador"/>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -17,24 +25,24 @@
 
 import Contador from "./Contador";
 import {mapGetters, mapActions} from "vuex";
+import FiltroNombre from "./FiltroNombre";
+import FiltroValor from "./FiltroValor";
 
 export default {
   name: "ListadorDeContadores",
-  components: {Contador},
+  components: {Contador, FiltroNombre, FiltroValor,},
   computed: {
-    contadores() {
-      return this.$store.state.contador.items
-    },
     ...mapGetters('contador', [
       'puedeRestarContador',
       'puedeSumarContador',
+      'elementosFiltrados'
     ]),
   },
   methods: {
     ...mapActions('contador', [
-      'alRestarPorIndice',
-      'alSumarPorIndice',
-      'alEliminarPorIndice',
+      'alRestarPorId',
+      'alSumarPorId',
+      'alEliminarPorId',
     ]),
   },
 }
