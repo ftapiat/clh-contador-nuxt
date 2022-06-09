@@ -1,8 +1,10 @@
 export default async function ({store}) {
   store.subscribe((mutation, state) => {
-    // Cuando ocurra una modificación en el estado, guardará los contadores en el Storage
+    // Periodicamente Guardará los contadores en el Storage
     localStorage.setItem("contador-items", JSON.stringify(state.contador.items));
+    // Periodicamente Guardará los filtros en la Sesión
+    sessionStorage.setItem('contador-orden', JSON.stringify(state.contador.orden));
   })
 
-  store.commit('contador/hidratarEstadoDesdeElStorage');
+  store.dispatch('iniciarAlmacen');
 }

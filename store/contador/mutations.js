@@ -1,16 +1,28 @@
 import {ContadorModel} from "~/src/models/ContadorModel";
 
-const obtieneElSiguienteFiltro = (filtroActual) => {
-  const filtros = [null, 'ASC', 'DESC'];
-  return filtros[filtros.indexOf(filtroActual) + 1] ?? filtros[0];
+const obtieneElSiguienteOrden = (ordenActual) => {
+  const ordenDisponibles = [null, 'ASC', 'DESC'];
+  return ordenDisponibles[ordenDisponibles.indexOf(ordenActual) + 1] ?? ordenDisponibles[0];
 }
 
 export default {
-  hidratarEstadoDesdeElStorage(state) {
-    const estadoDesdeElStorage = localStorage.getItem("contador-items");
-    if (estadoDesdeElStorage) {
-      state.items = JSON.parse(estadoDesdeElStorage).map((object) => new ContadorModel(object));
+  cargarValoresDesdeLosStorage(state) {
+    const storageItems = localStorage.getItem("contador-items");
+    let items;
+    if (storageItems) {
+      items = JSON.parse(storageItems).map((object) => new ContadorModel(object));
     }
+
+    const sessionOrden = sessionStorage.getItem("contador-orden");
+    let orden;
+    if (sessionOrden) {
+      orden = JSON.parse(sessionOrden);
+    }
+
+    state = Object.assign(state, {
+      items: items ?? state.items,
+      orden: orden ?? state.orden,
+    })
   },
   restarPorId(state, id) {
     state.items.find(contador => contador.id === id).valor--;
@@ -31,10 +43,12 @@ export default {
     state.items.push(new ContadorModel({nombre, valor: 0}));
     state.agregandoContador = false;
   },
-  cambiarFiltroNombre(state) {
-    state.filtroNombre = obtieneElSiguienteFiltro(state.filtroNombre);
+  cambiarOrdenarNombre(state) {
+    state.orden.valor = null; // Reinicia el otro orden
+    state.orden.nombre = obtieneElSiguienteOrden(state.orden.nombre);
   },
-  cambiarFiltroValor(state) {
-    state.filtroValor = obtieneElSiguienteFiltro(state.filtroValor);
-  }
+  cambiarOrdenarValor(state) {
+    state.orden.nombre = null; // Reinicia el otro orden
+    state.orden.valor = obtieneElSiguienteOrden(state.orden.valor);
+  },
 }

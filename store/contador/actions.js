@@ -17,10 +17,10 @@ export default {
   alAgregarContador({commit}, nombre) {
     commit('agregarContador', nombre);
   },
-  alPresionarFiltroNombre({commit}) {
-    commit('cambiarFiltroNombre');
+  alPresionarOrdenarNombre({commit}) {
+    commit('cambiarOrdenarNombre');
   },
-  alPresionarFiltroValor({commit}) {
-    commit('cambiarFiltroValor');
+  alPresionarOrdenarValor({commit}) {
+    commit('cambiarOrdenarValor');
   },
 }

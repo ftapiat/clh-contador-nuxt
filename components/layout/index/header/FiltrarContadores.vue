@@ -1,5 +1,5 @@
 <template>
-  <span>Filtrar Contadores</span>
+  <span>FiltrarContadores</span>
 </template>
 
 <script>

@@ -24,7 +24,7 @@ export default {
     ...mapGetters('contador', [
       'puedeRestarContador',
       'puedeSumarContador',
-      'elementosFiltrados'
+      'elementosOrdenados'
     ]),
   },
   methods: {

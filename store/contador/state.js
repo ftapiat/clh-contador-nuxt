@@ -1,8 +1,10 @@
 const state = {
   items: [],
   agregandoContador: false,
-  filtroNombre: null,
-  filtroValor: null,
+  orden: {
+    nombre: null,
+    valor: null,
+  },
 };
 
 export default () => (state);

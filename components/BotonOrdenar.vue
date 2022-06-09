@@ -9,13 +9,13 @@
 import {fas} from "@fortawesome/free-solid-svg-icons";
 
 export default {
-  name: "BotonFiltro",
+  name: "BotonOrdenar",
   props: [
-    "filtroActual"
+    "ordenActual"
   ],
   computed: {
     icono() {
-      switch (this.filtroActual) {
+      switch (this.ordenActual) {
         case null:
         default:
           return fas.faSort;
