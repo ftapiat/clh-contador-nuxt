@@ -1,5 +1,5 @@
 <template>
-  <span>FiltrarContadores</span>
+  <span class="alerta flotante con-bordes">// TODO: FiltrarContadores</span>
 </template>
 
 <script>
@@ -9,5 +9,10 @@ export default {
 </script>
 
 <style scoped>
-
+.alerta{
+  color: greenyellow;
+  background-color: black;
+  padding: 10px;
+  font-size: 16px;
+}
 </style>

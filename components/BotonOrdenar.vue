@@ -1,6 +1,8 @@
 <template>
-  <button @click="() => $emit('click')">
-    <FontAwesomeIcon :icon="icono"/>
+  <button @click="() => $emit('click')" class="boton sin-fondo sin-bordes puntero-en-hover"
+          :aria-label="label"
+  >
+    <FontAwesomeIcon :icon="icono" class="azul"/>
   </button>
 </template>
 
@@ -25,10 +27,23 @@ export default {
           return fas.faSortUp;
       }
     },
+    label(){
+      switch (this.ordenActual) {
+        case null:
+        default:
+          return "Ordenar";
+        case "ASC":
+          return "Orden Ascendente";
+        case "DESC":
+          return "Orden Descendente";
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
-
+.boton:hover {
+  cursor: pointer;
+}
 </style>

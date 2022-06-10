@@ -3,7 +3,6 @@
     <ModalAgregarContador/>
     <div>
       <Header/>
-      <br>
       <client-only>
         <ListadorDeContadores/>
         <br>

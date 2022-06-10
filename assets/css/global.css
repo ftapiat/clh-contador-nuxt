@@ -1,0 +1,100 @@
+:root {
+  --color-fondo: #F1F4F8;
+  --color-sobre-fondo: black;
+  --color-superficie: white;
+  --color-sobre-superficie: black;
+  --color-error: #FF5963;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+  url(~assets/fonts/poppins/Poppins-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+  url(~assets/fonts/poppins/Poppins-SemiBold.ttf) format("truetype");
+  font-weight: bold;
+}
+
+html {
+  font-family: "Poppins";
+  font-size: 20px;
+}
+
+body {
+  background-color: var(--color-fondo);
+}
+
+.h1 .h2 .h3 h4 .h5 .h6 {
+  font-weight: bold;
+}
+
+.con-bordes {
+  border-radius: 10px;
+}
+
+.sin-bordes {
+  border: none;
+}
+
+.sin-fondo {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+}
+
+.puntero-en-hover:hover{
+  cursor: pointer;
+}
+
+.tarjeta {
+  padding: 10px 30px 20px;
+  background-color: var(--color-superficie);
+}
+
+.boton{
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  padding: 10px 20px;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.boton:hover{
+  cursor: pointer;
+}
+
+.boton:disabled{
+  opacity: .3;
+}
+
+.boton:disabled:hover{
+  cursor: default;
+}
+
+.flotante {
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.texto-centrado{
+  text-align: center;
+}
+
+.azul {
+  color: dodgerblue;
+}
+
+.rojo-peligro{
+  color: var(--color-error);
+}
+
+.fondo-azul{
+  background-color: dodgerblue;
+  color: white;
+}

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Listador de Contadores</h1>
-    <table v-if="elementosOrdenados.length > 0">
+    <table v-if="elementosOrdenados.length > 0" class="tarjeta tabla flotante con-bordes">
       <thead>
       <tr>
         <th>Nombre
@@ -49,5 +49,11 @@ export default {
 </script>
 
 <style scoped>
+.tabla th{
+  padding: 0 20px 10px;
+}
 
+.tabla td{
+  padding-bottom: 250px;
+}
 </style>

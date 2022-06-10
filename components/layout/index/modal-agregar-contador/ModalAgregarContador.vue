@@ -1,6 +1,6 @@
 <template>
   <div class="modal" v-if="estaAgregandoContador" key="modal">
-    <div class="modal-contenido">
+    <div class="modal-contenido tarjeta flotante con-bordes">
       <FormularioAgregarContador/>
     </div>
   </div>
