@@ -8,7 +8,9 @@
   --color-sobre-superficie: black;
   --color-error: #FF5963;
   --color-sobre-error: white;
+  --color-error-pulsado: #f60109;
   --color-primario: #F88A33;
+  --color-primario-pulsado: #de670b;
   --color-sobre-primario: white;
   --color-secundario: dodgerblue;
   --color-sobre-secundario: white;
@@ -52,12 +54,17 @@ input {
   font-size: inherit;
   min-width: 50%;
   border-radius: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
 }
 
 input:focus {
   border-color: var(--color-secundario);
+}
+
+input:focus::placeholder {
+  color: var(--color-secundario);
 }
 
 input.invalido {
@@ -183,8 +190,12 @@ input.invalido {
   color: #585859;
 }
 
+.fondo-rojo-peligro {
+  background-color: var(--color-error);
+}
+
 .boton.rojo-peligro:hover:not(:disabled) {
-  color: #e80009;
+  color: var(--color-error-pulsado);
 }
 
 .boton.azul:hover:not(:disabled) {
@@ -197,4 +208,8 @@ input.invalido {
 
 .boton.fondo-gris:hover:not(:disabled) {
   background-color: #d5d5d5;
+}
+
+.boton.fondo-rojo-peligro:hover:not(:disabled) {
+  background-color: var(--color-error-pulsado);
 }

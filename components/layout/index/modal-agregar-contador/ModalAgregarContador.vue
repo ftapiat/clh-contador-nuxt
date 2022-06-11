@@ -1,7 +1,7 @@
 <template>
-  <div class="modal" v-if="estaAgregandoContador" key="modal">
-    <div class="modal-contenido tarjeta flotante con-bordes">
-      <button type="button" @click="alCerrarFormularioParaAgregar" class="boton boton-cerrar" title="Cerrar">
+  <div class="modal" v-if="estaAgregandoContador" key="modal" @click="alCerrarFormularioParaAgregar">
+    <div class="modal-contenido tarjeta flotante con-bordes" @click.stop>
+      <button type="button" @click="alCerrarFormularioParaAgregar" class="boton boton-cerrar fondo-rojo-peligro" title="Cerrar">
         &times;
       </button>
       <div style="padding: 0 2rem 2rem;">
@@ -34,7 +34,6 @@ export default {
 
 <style scoped>
 .boton-cerrar {
-  background-color: var(--color-error);
   float: right;
   margin: -1px;
   color: var(--color-sobre-error);

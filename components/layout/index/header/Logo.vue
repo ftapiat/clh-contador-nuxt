@@ -11,12 +11,13 @@ export default {
 </script>
 
 <style scoped>
-.enlace{
+.enlace {
   text-decoration: none;
+  color: var(--color-primario);
 }
 
-.enlace:not(:active){
-  color: inherit;
+.enlace:hover {
+  color: var(--color-primario-pulsado);
 }
 
 </style>

@@ -1,10 +1,12 @@
 <template>
-  <ValidationObserver v-slot="{ handleSubmit }">
+  <ValidationObserver v-slot="{ handleSubmit }" tag="div">
     <form @submit.stop.prevent="handleSubmit(agregar)" ref="formAgregar">
       <ValidationProvider name="nombre" rules="required|max:20" v-slot="{ valid, errors }"
                           style="width: 100%; padding-bottom: 20px;" tag="div">
         <input type="text" name="nombre" v-model="nombre" placeholder="Nombre del contador" ref="campoNombre"
-               style="width: 100%" :class="`${errors.length > 0 ? 'invalido' : ''}`">
+               style="width: 100%" :class="`${errors.length > 0 ? 'invalido' : ''}`"
+               autocomplete="off"/>
+        <br>
         <span class="rojo-peligro" style="font-size: 0.7rem;">{{ errors[0] }}</span>
       </ValidationProvider>
       <div>

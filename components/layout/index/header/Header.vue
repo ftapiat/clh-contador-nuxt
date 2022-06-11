@@ -39,10 +39,9 @@ export default {
   margin-bottom: 20px;
 }
 
-.header-contenido{
+.header-contenido {
   position: relative;
   display: flex !important;
-  align-items: center; /** Centra verticalmente los elementos para que no ocupen el height completo */
   flex-wrap: nowrap;
   justify-content: space-between;
 
