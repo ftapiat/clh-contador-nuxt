@@ -1,12 +1,13 @@
 <template>
   <tr>
-    <td>
-      <span class="texto-nombre">{{ contador.nombre }}</span>
+    <td class="texto-nombre">
+      {{ contador.nombre }}
     </td>
     <td class="texto-centrado">
-      <button @click="() => alRestarPorId(contador.id)" :disabled="!puedeRestarContador(contador.id)"
-              class="boton sin-fondo sin-bordes puntero-en-hover rojo-peligro"
-              aria-label="Disminuir valor contador">
+      <span class="en-linea">
+        <button @click="() => alRestarPorId(contador.id)" :disabled="!puedeRestarContador(contador.id)"
+                class="boton sin-fondo sin-bordes puntero-en-hover rojo-peligro"
+                aria-label="Disminuir valor contador">
         <FontAwesomeIcon :icon="iconoRestar"/>
       </button>
       <span class="texto-valor">{{ contador.valor }}</span>
@@ -15,11 +16,13 @@
               aria-label="Aumentar valor contador">
         <FontAwesomeIcon :icon="iconoSumar"/>
       </button>
+      </span>
     </td>
     <td class="texto-centrado">
-      <button @click="() => alEliminarPorId(contador.id)" class="boton sin-fondo sin-bordes puntero-en-hover"
+      <button @click="() => alEliminarPorId(contador.id)"
+              class="boton sin-fondo sin-bordes puntero-en-hover rojo-peligro"
               aria-label="Eliminar">
-      <FontAwesomeIcon :icon="iconoEliminar" class="rojo-peligro boton-eliminar"/>
+        <FontAwesomeIcon :icon="iconoEliminar" class="boton-eliminar"/>
       </button>
     </td>
   </tr>
@@ -56,8 +59,7 @@ export default {
 
 <style scoped>
 .texto-nombre {
-  display: inline-block;
-  min-width: 150px;
+  padding-left: 2rem;
 }
 
 .texto-valor {
@@ -66,7 +68,7 @@ export default {
   margin: 0 10px 0 10px;
 }
 
-.boton-eliminar{
+.boton-eliminar {
   font-size: 24px;
 }
 </style>

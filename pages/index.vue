@@ -1,14 +1,13 @@
 <template>
   <div>
-    <ModalAgregarContador/>
-    <div>
+    <div style="min-height: 100vh; margin-bottom: -100px">
+      <ModalAgregarContador/>
       <Header/>
       <client-only>
         <ListadorDeContadores/>
-        <br>
       </client-only>
-      <Footer/>
     </div>
+    <Footer/>
   </div>
 </template>
 

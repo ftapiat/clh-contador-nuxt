@@ -1,4 +1,7 @@
+import {extend} from "vee-validate";
+
 export default {
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'clh-contador-nuxt',
@@ -6,13 +9,13 @@ export default {
       lang: 'es'
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: ''},
+      {name: 'format-detection', content: 'telephone=no'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ]
   },
 
@@ -23,7 +26,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    "~/plugins/vuex-iniciar.client.js"
+    "~/plugins/vuex-iniciar.client.js",
+    "~/plugins/vee-validate.client.js",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,17 +39,21 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {},
 
   fontawesome: {
-    icons:{
-      solid:true,
-      brands:true
+    icons: {
+      solid: true,
+      brands: true
     }
+  },
+
+  transpile: [
+    "vee-validate/dist/rules"
+  ],
+  extend(config, ctx) {
   },
 }

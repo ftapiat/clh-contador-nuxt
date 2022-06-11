@@ -1,8 +1,8 @@
 <template>
-  <button @click="() => $emit('click')" class="boton sin-fondo sin-bordes puntero-en-hover"
-          :aria-label="label"
-  >
-    <FontAwesomeIcon :icon="icono" class="azul"/>
+  <button @click="() => $emit('click')"
+          class="boton sin-fondo sin-bordes puntero-en-hover azul"
+          :aria-label="label" type="button">
+    <FontAwesomeIcon :icon="icono"/>
   </button>
 </template>
 
@@ -41,9 +41,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.boton:hover {
-  cursor: pointer;
-}
-</style>

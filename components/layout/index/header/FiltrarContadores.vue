@@ -1,5 +1,5 @@
 <template>
-  <span class="alerta flotante con-bordes">// TODO: FiltrarContadores</span>
+  <span class="alerta">// TODO: FiltrarContadores</span>
 </template>
 
 <script>

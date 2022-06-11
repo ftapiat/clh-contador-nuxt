@@ -1,9 +1,17 @@
+/**
+  DOM
+ */
 :root {
   --color-fondo: #F1F4F8;
   --color-sobre-fondo: black;
   --color-superficie: white;
   --color-sobre-superficie: black;
   --color-error: #FF5963;
+  --color-sobre-error: white;
+  --color-primario: #F88A33;
+  --color-sobre-primario: white;
+  --color-secundario: dodgerblue;
+  --color-sobre-secundario: white;
 }
 
 @font-face {
@@ -27,10 +35,105 @@ html {
 
 body {
   background-color: var(--color-fondo);
+  margin: 0;
+  padding: 0;
 }
 
 .h1 .h2 .h3 h4 .h5 .h6 {
   font-weight: bold;
+}
+
+input {
+  background-color: var(--color-fondo);
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: grey;
+  height: 50px;
+  font-size: inherit;
+  min-width: 50%;
+  border-radius: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+input:focus {
+  border-color: var(--color-secundario);
+}
+
+input.invalido {
+  border-color: var(--color-error);
+}
+
+/**
+  Componentes
+ */
+.tarjeta {
+  padding: 10px 30px 20px;
+  background-color: var(--color-superficie);
+}
+
+.boton {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  padding: 10px 20px;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.boton:hover {
+  cursor: pointer;
+}
+
+.boton:disabled {
+  opacity: .3;
+}
+
+.boton:disabled:hover {
+  cursor: default;
+}
+
+.contenedor {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(1.5rem * .5);
+  padding-right: calc(1.5rem * .5);
+}
+
+@media (min-width: 720px) {
+  .contenedor {
+    max-width: 700px;
+  }
+}
+
+@media (min-width: 1020px) {
+  .contenedor {
+    max-width: 900px;
+  }
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla thead th {
+  border-bottom: 2px solid #dee2e6;
+}
+
+.tabla th, .tabla td {
+  padding: 0.75rem 1rem;
+}
+
+/**
+  Características
+ */
+.flotante {
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2) !important;
+  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2) !important;
+  -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2) !important;
 }
 
 .con-bordes {
@@ -46,55 +149,52 @@ body {
   background-repeat: no-repeat;
 }
 
-.puntero-en-hover:hover{
+.puntero-en-hover:hover {
   cursor: pointer;
 }
 
-.tarjeta {
-  padding: 10px 30px 20px;
-  background-color: var(--color-superficie);
-}
-
-.boton{
-  background-color: Transparent;
-  background-repeat: no-repeat;
-  padding: 10px 20px;
-  border: none;
-  font-size: 0.9rem;
-  border-radius: 4px;
-}
-
-.boton:hover{
-  cursor: pointer;
-}
-
-.boton:disabled{
-  opacity: .3;
-}
-
-.boton:disabled:hover{
-  cursor: default;
-}
-
-.flotante {
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
-}
-
-.texto-centrado{
+.texto-centrado {
   text-align: center;
 }
 
+.en-linea {
+  display: inline-flex;
+  align-items: center;
+}
+
+/**
+  Colores
+ */
 .azul {
   color: dodgerblue;
 }
 
-.rojo-peligro{
+.rojo-peligro {
   color: var(--color-error);
 }
 
-.fondo-azul{
+.fondo-azul {
   background-color: dodgerblue;
   color: white;
+}
+
+.fondo-gris {
+  background-color: #E6E4EA;
+  color: #585859;
+}
+
+.boton.rojo-peligro:hover:not(:disabled) {
+  color: #e80009;
+}
+
+.boton.azul:hover:not(:disabled) {
+  color: #0073e7;
+}
+
+.boton.fondo-azul:hover:not(:disabled) {
+  background-color: #0073e7;
+}
+
+.boton.fondo-gris:hover:not(:disabled) {
+  background-color: #d5d5d5;
 }

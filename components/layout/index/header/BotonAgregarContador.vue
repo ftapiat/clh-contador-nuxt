@@ -1,6 +1,6 @@
 <template>
   <button @click="alMostrarFormularioParaAgregar" :disabled="!puedeAgregarContador"
-  class="boton fondo-azul flotante" aria-label="Agregar Contador">
+  class="boton fondo-azul flotante" aria-label="Agregar Contador" style="margin-right: auto" type="button">
     <FontAwesomeIcon :icon="iconoSumar"/> Agregar
   </button>
 </template>
@@ -25,6 +25,3 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>

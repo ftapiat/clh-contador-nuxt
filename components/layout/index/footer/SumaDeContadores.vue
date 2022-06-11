@@ -1,5 +1,7 @@
 <template>
-  <span>Total de contadores: ({{ numTotalElementos }})</span>
+  <div class="total-contadores texto-centrado">
+    <b>Total de contadores: {{ numTotalElementos }}</b>
+  </div>
 </template>
 
 <script>
@@ -16,5 +18,7 @@ export default {
 </script>
 
 <style scoped>
-
+.total-contadores{
+  color: var(--color-sobre-primario);
+}
 </style>
