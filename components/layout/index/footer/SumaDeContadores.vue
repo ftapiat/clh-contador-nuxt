@@ -1,6 +1,7 @@
 <template>
   <div class="total-contadores texto-centrado">
-    <b>Total de contadores: {{ numTotalElementos }}</b>
+    <b>Total de contadores: {{ numTotalElementos }}</b><br>
+    <b>Suma total de valores: {{ sumaTotalValores }}</b>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ export default {
   computed: {
     ...mapGetters('contador', [
       'numTotalElementos',
+      'sumaTotalValores',
     ]),
   },
 }
@@ -20,5 +22,7 @@ export default {
 <style scoped>
 .total-contadores{
   color: var(--color-sobre-primario);
+  display: table-cell;
+  vertical-align: middle;
 }
 </style>

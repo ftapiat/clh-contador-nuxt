@@ -1,7 +1,9 @@
 <template>
-  <a href="#" class="enlace">
-    <b>Listador de Contadores</b>
-  </a>
+  <div class="logo">
+    <a href="#" class="enlace">
+      <b>Listador de Contadores</b>
+    </a>
+  </div>
 </template>
 
 <script>
@@ -11,14 +13,16 @@ export default {
 </script>
 
 <style scoped>
+.logo{
+  flex: 1;
+}
+
 .enlace {
   text-decoration: none;
   color: var(--color-primario);
-  flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 100%;
 }
 
 .enlace:hover {

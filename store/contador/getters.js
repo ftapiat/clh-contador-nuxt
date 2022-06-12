@@ -20,37 +20,39 @@ export default {
   numTotalElementos(state) {
     return state.items.length;
   },
+  sumaTotalValores(state){
+    return state.items.reduce((total, item) => total + item.valor, 0);
+  },
   elementosOrdenados(state) {
     const ordenNombre = state.orden.nombre;
     const ordenValor = state.orden.valor;
-    let items = [...state.items]; // Clona el estado para no modificarlo erróneamente
+    let items = [...state.items]; // Clona el estado para no modificarlo directamente
 
     // Aplica filtros
     items = filtrarContadores(items, state.filtros);
 
-    // Ordena
-    return items.sort((a, b) => {
-      let puntajeNombre = 0;
-      let puntajeValor = 0;
-
-      if (ordenNombre) {
+    // Ordena por nombre o por valor, si es establecido
+    if (ordenNombre){
+      items.sort((a, b) => {
         const nombreA = a.nombre.toLowerCase();
         const nombreB = b.nombre.toLowerCase();
         if (ordenNombre === "ASC") {
-          puntajeNombre = (nombreA > nombreB) ? 1 : (nombreA < nombreB) ? -1 : 0;
+          return (nombreA > nombreB) ? 1 : (nombreA < nombreB) ? -1 : 0;
         } else {
-          puntajeValor = (nombreA < nombreB) ? 1 : (nombreA > nombreB) ? -1 : 0;
+          return (nombreA < nombreB) ? 1 : (nombreA > nombreB) ? -1 : 0;
         }
-      }
+      });
+    } else if (ordenValor){
+      items.sort((a, b) => {
+        if (ordenValor === "ASC") {
+          return a.valor - b.valor;
+        } else {
+          return b.valor - a.valor;
+        }
+      });
+    }
 
-      if (ordenValor === "ASC") {
-        puntajeValor = (a.valor > b.valor) ? 1 : (a.valor < b.valor) ? -1 : 0;
-      } else if (ordenValor === "DESC") {
-        puntajeValor = (a.valor < b.valor) ? 1 : (a.valor > b.valor) ? -1 : 0;
-      }
-
-      return puntajeNombre + puntajeValor;
-    });
+    return items;
   },
   puedeAgregarContador(state) {
     return state.items.length < cantidadMaximaContadores;

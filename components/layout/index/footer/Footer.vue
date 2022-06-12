@@ -21,10 +21,9 @@ export default {
 
   width: 100%;
   background-color: var(--color-primario);
-  height: 100px;
-
-  display: block;
-  line-height: 90px;
+  min-height: 100px;
+  padding: 20px 0;
+  display: table;
 
   -webkit-box-shadow: 0 -.12rem 7px rgba(0, 0, 0, 0.2) !important;
   box-shadow: 0 -.12rem 7px rgba(0, 0, 0, 0.2) !important;

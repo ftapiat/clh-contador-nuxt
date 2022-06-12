@@ -1,13 +1,11 @@
 <template>
   <ValidationObserver v-slot="{ handleSubmit }" tag="div">
     <form @submit.stop.prevent="handleSubmit(agregar)">
-      <ValidationProvider name="nombre" rules="required|max:20" v-slot="{ valid, errors }"
-                          style="width: 100%; padding-bottom: 20px;" tag="div" class="grupo-input">
+      <ValidationProvider rules="required|max:20" tag="div" class="grupo-input" v-slot="{ valid, errors }" name="nombre">
         <span class="rojo-peligro" style="font-size: 0.7rem;">{{ errors[0] }}</span>
-        <input type="text" name="nombre" v-model="nombre" placeholder="Nombre del contador" ref="campoNombre"
-               style="width: 100%" :class="`${errors.length > 0 ? 'invalido' : ''}`"
-               autocomplete="off" id="campoNombre"/>
-        <label for="campoNombre">Nombre </label>
+        <input type="text" id="campoNombre" name="nombre" v-model="nombre" autocomplete="off" ref="campoNombre"
+               :class="`${errors.length > 0 ? 'invalido' : ''}`">
+        <label for="campoNombre">Nombre del contador </label>
       </ValidationProvider>
       <div>
         <button type="submit" class="boton flotante fondo-azul">Agregar</button>
@@ -37,7 +35,7 @@ export default {
       'alAgregarContador',
     ]),
     agregar() {
-      this.alAgregarContador(this.nombre);
+      this.alAgregarContador(this.nombre.trim());
       this.nombre = null;
     }
   },
