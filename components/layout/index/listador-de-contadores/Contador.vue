@@ -30,7 +30,7 @@
 
 <script>
 import {mapActions, mapGetters} from "vuex";
-import {fas} from "@fortawesome/free-solid-svg-icons";
+import {faMinus, faPlus, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 
 export default {
   name: "Contador",
@@ -43,9 +43,9 @@ export default {
       'puedeSumarContador',
       'elementosOrdenados'
     ]),
-    iconoRestar: () => fas.faMinus,
-    iconoSumar: () => fas.faPlus,
-    iconoEliminar: () => fas.faTrashAlt,
+    iconoRestar: () => faMinus,
+    iconoSumar: () => faPlus,
+    iconoEliminar: () => faTrashAlt,
   },
   methods: {
     ...mapActions('contador', [

@@ -11,11 +11,20 @@ export default {
   alMostrarFormularioParaAgregar({commit}) {
     commit('mostrarFormularioParaAgregar');
   },
-  alCerrarFormularioParaAgregar({commit}) {
-    commit('cerrarFormularioParaAgregar');
+  alMostrarFormularioParaFiltrar({commit}) {
+    commit('mostrarFormularioParaFiltrar');
+  },
+  alCerrarModal({commit}) {
+    commit('cerrarModal');
   },
   alAgregarContador({commit}, nombre) {
     commit('agregarContador', nombre);
+  },
+  alFiltrar({commit}, {nombre, valor}) {
+    commit('filtrar', {nombre, valor});
+  },
+  alBorrarFiltros({commit}) {
+    commit('borrarFiltros');
   },
   alPresionarOrdenarNombre({commit}) {
     commit('cambiarOrdenarNombre');

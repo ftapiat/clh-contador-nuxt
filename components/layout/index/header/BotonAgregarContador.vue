@@ -7,7 +7,7 @@
 
 <script>
 import {mapActions, mapGetters} from "vuex";
-import {fas} from "@fortawesome/free-solid-svg-icons";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 
 export default {
   name: "BotonAgregarContador",
@@ -15,7 +15,7 @@ export default {
     ...mapGetters('contador', [
       'puedeAgregarContador',
     ]),
-    iconoSumar: () => fas.faPlus,
+    iconoSumar: () => faPlus,
   },
   methods: {
     ...mapActions('contador', [

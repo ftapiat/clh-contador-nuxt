@@ -1,25 +1,17 @@
 <template>
-  <div>
-    <div style="min-height: 100vh; margin-bottom: -100px">
-      <ModalAgregarContador/>
-      <Header/>
-      <client-only>
-        <ListadorDeContadores/>
-      </client-only>
-    </div>
-    <Footer/>
-  </div>
+  <transition name="fade" appear>
+    <client-only>
+      <ContenedorContadores/>
+    </client-only>
+  </transition>
 </template>
 
 <script>
 
-import Header from "~/components/layout/index/header/Header";
-import Footer from "~/components/layout/index/footer/Footer";
-import ListadorDeContadores from "~/components/layout/index/listador-de-contadores/ListadorDeContadores";
-import ModalAgregarContador from "~/components/layout/index/modal-agregar-contador/ModalAgregarContador";
+import ContenedorContadores from "~/components/layout/index/listador-de-contadores/ContenedorContadores";
 
 export default {
   name: 'IndexPage',
-  components: {Header, Footer, ListadorDeContadores, ModalAgregarContador},
+  components: {ContenedorContadores},
 }
 </script>

@@ -8,7 +8,7 @@
 
 <script>
 
-import {fas} from "@fortawesome/free-solid-svg-icons";
+import {faSort, faSortDown, faSortUp} from "@fortawesome/free-solid-svg-icons";
 
 export default {
   name: "BotonOrdenar",
@@ -20,11 +20,11 @@ export default {
       switch (this.ordenActual) {
         case null:
         default:
-          return fas.faSort;
+          return faSort;
         case "ASC":
-          return fas.faSortDown;
+          return faSortDown;
         case "DESC":
-          return fas.faSortUp;
+          return faSortUp;
       }
     },
     label(){

@@ -1,0 +1,90 @@
+.list-enter-active,
+.list-leave-active {
+  transition: 300ms cubic-bezier(0.59, 0.12, 0.34, 0.95);
+  transition-property: opacity, transform;
+}
+
+.list-enter {
+  opacity: 0;
+  transform: translateX(-50px) scaleY(0.5);
+}
+
+.list-enter-to {
+  opacity: 1;
+  transform: translateX(0) scaleY(1);
+}
+
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(-50px) scaleY(0.5);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .4s linear;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.pop-enter-active,
+.pop-leave-active {
+  transition: transform 0.4s cubic-bezier(0.5, 0, 0.5, 1), opacity 0.4s linear;
+}
+
+.pop-enter,
+.pop-leave-to {
+  opacity: 0;
+  transform: scale(0.3) translateY(-50%);
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: 250ms;
+  transition-property: opacity, transform;
+}
+
+.slide-enter {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.slide-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.from-left-enter-active {
+  animation: come-from-left 700ms forwards;
+  -webkit-animation: come-from-left 700ms forwards;
+}
+
+.from-left-leave-active {
+  animation: come-from-left 700ms reverse;
+  -webkit-animation: come-from-left 700ms reverse;
+}
+
+@keyframes come-from-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes come-from-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}

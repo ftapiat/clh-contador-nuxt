@@ -14,6 +14,11 @@ export default {
 .enlace {
   text-decoration: none;
   color: var(--color-primario);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .enlace:hover {

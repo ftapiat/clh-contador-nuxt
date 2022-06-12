@@ -45,7 +45,26 @@ body {
   font-weight: bold;
 }
 
-input {
+.grupo-input{
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.grupo-input label{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-10%);
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  font-size: 0.75rem;
+  color: grey;
+}
+
+input, select {
   background-color: var(--color-fondo);
   outline: 0;
   border-width: 0 0 2px;
@@ -53,22 +72,40 @@ input {
   height: 50px;
   font-size: inherit;
   min-width: 50%;
-  border-radius: 4px;
   padding-left: 10px;
   padding-right: 10px;
   box-sizing: border-box;
+  width: 100%;
+  display: block;
 }
 
-input:focus {
+select {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  appearance: none;
+}
+
+.grupo-input select, .grupo-input input{
+  height: calc(3.5rem + 2px);
+  padding-top: 20px;
+  line-height: 1.75;
+}
+
+input:focus, select:focus {
   border-color: var(--color-secundario);
 }
 
-input:focus::placeholder {
+input:focus + label, select:focus + label {
   color: var(--color-secundario);
 }
 
 input.invalido {
   border-color: var(--color-error);
+}
+
+input.invalido:focus + label {
+  color: var(--color-error);
 }
 
 /**
@@ -107,6 +144,13 @@ input.invalido {
   margin-right: auto;
   padding-left: calc(1.5rem * .5);
   padding-right: calc(1.5rem * .5);
+}
+
+.todo{
+  color: greenyellow;
+  background-color: black;
+  padding: 10px;
+  font-size: 16px;
 }
 
 @media (min-width: 720px) {
@@ -186,8 +230,8 @@ input.invalido {
 }
 
 .fondo-gris {
-  background-color: #E6E4EA;
-  color: #585859;
+  background-color: #d4d4d9;
+  color: #3f3f3f;
 }
 
 .fondo-rojo-peligro {
@@ -207,9 +251,14 @@ input.invalido {
 }
 
 .boton.fondo-gris:hover:not(:disabled) {
-  background-color: #d5d5d5;
+  background-color: #b0b0b0;
+  color: black;
 }
 
 .boton.fondo-rojo-peligro:hover:not(:disabled) {
   background-color: var(--color-error-pulsado);
 }
+
+/**
+Efectos de Transición
+ */
