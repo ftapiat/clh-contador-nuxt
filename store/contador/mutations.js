@@ -56,6 +56,7 @@ export default {
   },
   borrarFiltros(state) {
     state.filtros = {nombre: null, valor: {tipo: null, cantidad: null}}
+    state.modoModal = null;
   },
   cambiarOrdenarNombre(state) {
     state.orden.valor = null; // Reinicia el otro orden
