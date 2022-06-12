@@ -15,6 +15,7 @@ export default {
 <style scoped>
 .logo{
   flex: 1;
+  display: flex;
 }
 
 .enlace {
